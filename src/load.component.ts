@@ -10,6 +10,8 @@ export class LoadComponent implements OnInit {
   animate: boolean = false;
   @Input() colorOdd: string;
   @Input() colorEven: string;
+  @Input() width: number;
+  @Input() height: number;
 
   constructor(public loadService: LoadService) {}
 
@@ -17,7 +19,6 @@ export class LoadComponent implements OnInit {
     this.loadService.getValue().subscribe((status: boolean) => {
       this.animate = status;
     });
-
     this.handleOddColor();
     this.handleEventColor();
   }

@@ -70,11 +70,23 @@ Finally, you can use its components, in your Angular application:
 
 You can modify the animation with the following:
 
+```
+evenColor: Change the color of even numbered squares.
+
+oddColor: Change the color of odd numbered squares.
+
+    All color codes work, color names supported:
+    red, blue, yellow, teal
+
+width: Change the width of each square.
+
+height: Change the hright of each square.
+```
+
+Example:
+
 ```html
-// Where evenColor changes the color of even numbered squares and oddColor the odd numbered squares.
-// All color codes work, color names supported:
-// red, blue, yellow, teal
-<ng-load evenColor="#F44336" oddColor="#2196F3"></ng-load>
+<ng-load evenColor="#F44336" oddColor="#2196F3" width=50 height=50></ng-load>
 ```
 
 
