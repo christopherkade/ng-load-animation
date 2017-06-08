@@ -33,7 +33,7 @@ import { SampleModule } from 'ng-load-animation';
   ],
   providers: [
 
-    // and service
+    // service
     LoadService
 
   ],
@@ -47,8 +47,7 @@ and for your Angular `component`:
 ```typescript
 export class AppComponent {
 
-  // public service
-  constructor(public loadService: LoadService) {}
+  constructor(private loadService: LoadService) {}
 
   // use the method 'animate' to display or hide the animation
   start() {
@@ -68,6 +67,16 @@ Finally, you can use its components, in your Angular application:
 <ng-load></ng-load>
 ...
 ```
+
+You can modify the animation with the following:
+
+```html
+// Where evenColor changes the color of even numbered squares and oddColor the odd numbered squares.
+// All color codes work, color names supported:
+// red, blue, yellow, teal
+<ng-load evenColor="#F44336" oddColor="#2196F3"></ng-load>
+```
+
 
 ## License
 
