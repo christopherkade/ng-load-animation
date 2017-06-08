@@ -20,8 +20,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import your library
-import { SampleModule } from 'ng-load-animation';
+// Import the library
+import { LoadComponent, LoadService } from 'ng-load-animation';
 
 @NgModule({
   declarations: [
@@ -73,10 +73,11 @@ Finally, you can use its components, in your Angular application:
 You can modify the animation with the following:
 
 ```html
+<ng-load evenColor="#F44336" oddColor="#2196F3"></ng-load>
 // Where evenColor changes the color of even numbered squares and oddColor the odd numbered squares.
 // All color codes work, color names supported:
 // red, blue, yellow, teal
-<ng-load evenColor="#F44336" oddColor="#2196F3"></ng-load>
+
 ```
 
 
