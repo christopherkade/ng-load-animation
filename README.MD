@@ -1,6 +1,8 @@
 # ng-load-animation
 
-A simple animation in Angular 2
+A simple animation component in Angular 2
+
+![](https://user-images.githubusercontent.com/15229355/26939918-24364778-4c79-11e7-8dab-447cab3fe500.gif)
 
 ## Using ng-load-animation
 
