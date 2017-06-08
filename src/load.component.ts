@@ -1,13 +1,20 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {LoadService} from './load.service';
 
 @Component({
   selector: 'ng-load',
   templateUrl: './load.component.html',
   styleUrls: ['./load.component.css']
 })
-export class LoadComponent {
+export class LoadComponent implements OnInit {
+  @Input() animate = true;
 
-  @Input() animate = false;
+  constructor(public loadService: LoadService) {}
 
-  constructor() {}
+  ngOnInit(): void {
+    this.loadService.getValue().subscribe((status: boolean) => {
+      this.animate = status;
+    });
+  }
+
 }

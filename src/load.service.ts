@@ -1,12 +1,16 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable, Output} from '@angular/core';
 
 @Injectable()
 export class LoadService {
-  animating = false;
+  @Output() animating: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
-  public animate(val: boolean) {
-    this.animating = val;
+  animate(val: boolean) {
+    this.animating.emit(val);
+  }
+
+  getValue(): any {
+    return this.animating;
   }
 }

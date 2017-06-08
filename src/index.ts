@@ -14,7 +14,10 @@ export * from './load.service';
     LoadComponent,
   ],
   exports: [
-    LoadComponent,
+    LoadComponent
+  ],
+  providers: [
+    LoadService
   ]
 })
 export class LoadModule {

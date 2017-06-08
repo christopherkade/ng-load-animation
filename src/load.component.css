@@ -9,6 +9,7 @@
 }
 .lds-cube {
     position: relative;
+    z-index: 1000;
     margin-left: 42%;
     margin-top: 15%;
 }

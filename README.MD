@@ -65,7 +65,7 @@ Finally, you can use its components, in your Angular application:
 
 ```html
 ...
-<ng-load [animate]="loadService.animating"></ng-load>
+<ng-load></ng-load>
 ...
 ```
 
