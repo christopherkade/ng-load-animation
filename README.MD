@@ -2,14 +2,6 @@
 
 A simple animation in Angular 2
 
-## Installation
-
-To install this library, run:
-
-```bash
-$ npm install ng-load-animation --save
-```
-
 ## Using ng-load-animation
 
 Start by installing it to your Angular2+ project:
