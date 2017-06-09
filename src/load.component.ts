@@ -7,11 +7,13 @@ import {LoadService} from './load.service';
   styleUrls: ['./load.component.css']
 })
 export class LoadComponent implements OnInit {
-  animate: boolean = false;
   @Input() colorOdd: string;
   @Input() colorEven: string;
+  @Input() shape: string;
   @Input() width: number;
   @Input() height: number;
+  radius: number;
+  animate: boolean;
 
   constructor(public loadService: LoadService) {}
 
@@ -19,43 +21,32 @@ export class LoadComponent implements OnInit {
     this.loadService.getValue().subscribe((status: boolean) => {
       this.animate = status;
     });
-    this.handleOddColor();
-    this.handleEventColor();
+    this.handleShape();
   }
 
   /**
-   * Checks color code passed by property binding
+   * Handles styles that are shared across divs
+   * @returns {{height: string, background: string}}, used by ngStyle to define an elements style
    */
-  handleOddColor() {
-    switch (this.colorOdd) {
-      case 'red':
-        this.colorOdd = '#F44336';
-        break;
-      case 'blue':
-        this.colorOdd = '#2196F3';
-        break;
-      case 'yellow':
-        this.colorOdd = '#FFEB3B';
-        break;
-      case 'teal':
-        this.colorOdd = '#009688';
-        break;
-    }
+  getStyle(): any {
+    return {
+      'height': this.height + 'px',
+      'width': this.width + 'px',
+      'border-radius': this.radius + '%'
+    };
   }
 
-  handleEventColor() {
-    switch (this.colorEven) {
-      case 'red':
-        this.colorEven = '#F44336';
+  /**
+   * Checks shape binding and sets the corresponding radius
+   */
+  handleShape() {
+    switch (this.shape) {
+      case 'circle':
+        this.radius = 50;
         break;
-      case 'blue':
-        this.colorEven = '#2196F3';
-        break;
-      case 'yellow':
-        this.colorEven = '#FFEB3B';
-        break;
-      case 'teal':
-        this.colorEven = '#009688';
+      default:
+        this.shape = 'square';
+        this.radius = 0;
         break;
     }
   }
