@@ -2,6 +2,8 @@
 
 A simple CSS animation component using Angular 2
 
+Also found on https://www.npmjs.com/package/ng-load-animation
+
 ![](https://user-images.githubusercontent.com/15229355/26939918-24364778-4c79-11e7-8dab-447cab3fe500.gif)
 
 ## Using ng-load-animation
