@@ -6,6 +6,7 @@
     "build:watch": "gulp",
     "docs": "npm run docs:build",
     "docs:build": "compodoc -p tsconfig.json -n ng-load-animation -d docs --hideGenerator",
+    "publish": "cd ./dist && npm publish",
     "docs:serve": "npm run docs:build -- -s",
     "docs:watch": "npm run docs:build -- -s -w",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",

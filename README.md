@@ -23,7 +23,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import the library
-import { LoadComponent, LoadService } from 'ng-load-animation';
+import { LoadModule, LoadService } from 'ng-load-animation';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,7 @@ import { LoadComponent, LoadService } from 'ng-load-animation';
 export class AppModule { }
 ```
 
-and for your Angular `component`:
+then display or hide the animation using the method `animate(boolean)` in your newly provided service:
 
 ```typescript
 export class AppComponent {

@@ -1,16 +1,18 @@
-import {EventEmitter, Injectable, Output} from '@angular/core';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class LoadService {
-  @Output() animating: EventEmitter<any> = new EventEmitter();
+    private _animate = new BehaviorSubject(false);
 
-  constructor() {}
+    constructor() {}
 
-  animate(val: boolean) {
-    this.animating.emit(val);
-  }
+    getObservable(): Observable<any> {
+        return this._animate.asObservable();
+    }
 
-  getValue(): any {
-    return this.animating;
-  }
+    public animate(value: boolean) {
+        this._animate.next(value);
+    }
 }

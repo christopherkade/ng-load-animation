@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {LoadService} from './load.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { LoadService } from './load.service';
 
 @Component({
     selector: 'ng-load',
@@ -15,13 +15,13 @@ export class LoadComponent implements OnInit {
     radius: number;
     animate: boolean;
 
-    constructor(public loadService: LoadService) {
-    }
+    constructor(public loadService: LoadService) {}
 
     ngOnInit(): void {
-        this.loadService.getValue().subscribe((status: boolean) => {
-            this.animate = status;
-        });
+        this.loadService.getObservable()
+            .subscribe((status: boolean) => {
+                this.animate = status;
+            });
         this.handleShape();
     }
 
